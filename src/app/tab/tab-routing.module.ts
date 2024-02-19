@@ -24,6 +24,10 @@ const routes: Routes = [
       }, {
         path: 'photos',
         loadChildren: () => import('../photos/photos.module').then(m=>m.PhotosPageModule)
+      },
+      {
+        path: 'pal-list',
+        loadChildren: () => import('../pal-list/pal-list.module').then( m => m.PalListPageModule)
       }
     ]
   }

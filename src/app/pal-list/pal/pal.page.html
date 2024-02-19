@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/pals"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="pal">{{ pal.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="setUpdate()">Update</ion-button>
+
+  <div *ngIf="!modif">
+    <ion-grid *ngIf="pal">
+      <ion-col>
+        <img [src]="pal.pictureLink" [alt]="pal.name">
+      </ion-col>
+      <ion-row>
+        <ion-col>
+          <strong>Number :</strong> {{ pal.number }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <strong>Name :</strong> {{ pal.name }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <strong>Description :</strong>
+          <p>{{ pal.description }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <strong>Type :</strong> {{ pal.type1 }} / {{ pal.type2 }}
+        </ion-col>
+        <ion-col>
+          <strong>Work :</strong> {{ pal.work }}
+        </ion-col>
+        <ion-col>
+          <strong>Food :</strong> {{ pal.food }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="modif">
+    <ion-item>
+      <ion-input type="text" label="Image" [(ngModel)]="pal.pictureLink"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" label="Number" [(ngModel)]="pal.number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" label="Name" [(ngModel)]="pal.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea label="Description" rows="10" [(ngModel)]="pal.description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Type 1" [(ngModel)]="pal.type1">
+        <ion-select-option value="Type 1">Neutral</ion-select-option>
+        <ion-select-option value="Type 2">Dark</ion-select-option>
+        <ion-select-option value="Type 3">Dragon</ion-select-option>
+        <ion-select-option value="Type 4">Ice</ion-select-option>
+        <ion-select-option value="Type 5">Fire</ion-select-option>
+        <ion-select-option value="Type 6">Grass</ion-select-option>
+        <ion-select-option value="Type 7">Ground</ion-select-option>
+        <ion-select-option value="Type 8">Electric</ion-select-option>
+        <ion-select-option value="Type 9">Water</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Type 2" [(ngModel)]="pal.type2">
+        <ion-select-option value="Type 1">Neutral</ion-select-option>
+        <ion-select-option value="Type 2">Dark</ion-select-option>
+        <ion-select-option value="Type 3">Dragon</ion-select-option>
+        <ion-select-option value="Type 4">Ice</ion-select-option>
+        <ion-select-option value="Type 5">Fire</ion-select-option>
+        <ion-select-option value="Type 6">Grass</ion-select-option>
+        <ion-select-option value="Type 7">Ground</ion-select-option>
+        <ion-select-option value="Type 8">Electric</ion-select-option>
+        <ion-select-option value="Type 9">Water</ion-select-option>
+        <ion-select-option value="Type 10">None</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-list style="
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;">
+    <ion-label style="
+    width: 100%;
+    padding: 4%;">Work</ion-label>
+      <ion-item *ngFor="let work of works" style="width: 50%;">
+        <ion-label>{{ work.label }}</ion-label>
+        <ion-checkbox slot="start" [(ngModel)]="work.checked"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-select label="Food" [(ngModel)]="pal.food">
+        <ion-select-option value="Food 1">1</ion-select-option>
+        <ion-select-option value="Food 2">2</ion-select-option>
+        <ion-select-option value="Food 3">3</ion-select-option>
+        <ion-select-option value="Food 4">4</ion-select-option>
+        <ion-select-option value="Food 5">5</ion-select-option>
+        <ion-select-option value="Food 6">6</ion-select-option>
+        <ion-select-option value="Food 7">7</ion-select-option>
+        <ion-select-option value="Food 8">8</ion-select-option>
+        <ion-select-option value="Food 9">9</ion-select-option>
+        <ion-select-option value="Food 10">10</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <p class="text-center">
+      <ion-button (click)="onUpdate()">Modify</ion-button>
+    </p>
+  </div>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Paldex</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>Generation of a new pal</h2>
+  <ion-button routerLink="pal-new">Generate a pal</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="1" *ngFor="let pal of pals">
+        <ion-card [routerLink]="['/pals', pal.id]">
+          <img [src]="pal.pictureLink" [alt]="pal.name">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
