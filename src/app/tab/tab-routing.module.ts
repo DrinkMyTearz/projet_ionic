@@ -26,7 +26,7 @@ const routes: Routes = [
         loadChildren: () => import('../photos/photos.module').then(m=>m.PhotosPageModule)
       },
       {
-        path: 'pal-list',
+        path: 'pal',
         loadChildren: () => import('../pal-list/pal-list.module').then( m => m.PalListPageModule)
       }
     ]

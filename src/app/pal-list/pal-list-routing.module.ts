@@ -9,11 +9,11 @@ const routes: Routes = [
     component: PalListPage
   },
   {
-    path: 'pal-new',
+    path: 'new',
     loadChildren: () => import('./pal-new/pal-new.module').then( m => m.PalNewPageModule)
   },
   {
-    path: 'pal',
+    path: ':id',
     loadChildren: () => import('./pal/pal.module').then( m => m.PalPageModule)
   }
 ];
