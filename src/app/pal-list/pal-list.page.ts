@@ -14,16 +14,17 @@ export class PalListPage implements OnInit {
 
   constructor(
     private Pals: PalService
-    ) { }
+    ) {}
 
   ngOnInit() {
     this.Pals.getAll().subscribe((data: any) => {
-      this.pals = data;
+      this.filteredPals = data;
+    this.filteredPals = this.sortedPals;
     });
   }
 
   get sortedPals(): any[] {
-    return this.pals.sort((a, b) => a.number - b.number);
+    return this.filteredPals.sort((a, b) => a.number - b.number);
   }
 
   getTypeImageUrl(type: string): string {

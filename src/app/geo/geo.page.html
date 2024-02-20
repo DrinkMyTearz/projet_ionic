@@ -1,11 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Geolocalistion</ion-title>
+    <ion-title>Geolocalisation</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-text>
-    {{ latitude }},{{ longitude }}
+<ion-content class="ion-text-center ion-padding">
+  <ion-text class="ion-text-large">
+    <h2>You are here:</h2> 
+    <h1>{{ latitude }}, {{ longitude }}</h1>
   </ion-text>
 </ion-content>
