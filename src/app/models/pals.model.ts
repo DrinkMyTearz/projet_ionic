@@ -7,7 +7,6 @@ export class Pals {
     type1: string;
     type2: string;
     work: Array<string>;
-    food: string;
 
     constructor() {
         this.pictureLink = '';
@@ -17,6 +16,5 @@ export class Pals {
         this.type1 = '';
         this.type2 = '';
         this.work = [];
-        this.food = '';
     }
 }
