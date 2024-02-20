@@ -21,6 +21,9 @@ const routes: Routes = [
       }, {
         path: 'pal',
         loadChildren: () => import('../pal-list/pal-list.module').then( m => m.PalListPageModule)
+      }, {
+        path: 'geo',
+        loadChildren: () => import('../geo/geo.module').then( m => m.GeoPageModule)
       }
     ]
   }
