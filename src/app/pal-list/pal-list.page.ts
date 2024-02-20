@@ -20,4 +20,8 @@ export class PalListPage implements OnInit {
     });
   }
 
+  get sortedPals(): any[] {
+    return this.pals.sort((a, b) => a.number - b.number);
+  }
+
 }

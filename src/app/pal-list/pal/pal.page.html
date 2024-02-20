@@ -9,6 +9,7 @@
 
 <ion-content>
   <ion-button (click)="setUpdate()">Update</ion-button>
+  <ion-button (click)="onDelete(pal.id)"><ion-icon name="person-remove"></ion-icon>Supprimer</ion-button>
 
   <div *ngIf="!modif">
     <ion-grid *ngIf="pal">
@@ -32,15 +33,13 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>
-          <strong>Type :</strong> {{ pal.type1 }} / {{ pal.type2 }}
-        </ion-col>
-        <ion-col>
-          <strong>Work :</strong> {{ pal.work[1] }}
-        </ion-col>
-        <ion-col>
-          <strong>Food :</strong> {{ pal.food }}
-        </ion-col>
+        <strong>Type :</strong> {{ pal.type1 }} / {{ pal.type2 }}
+      </ion-row>
+      <ion-row>
+        <strong>Work :</strong> {{ pal.work[1] }}
+      </ion-row>
+      <ion-row>
+        <strong>Food :</strong> {{ pal.food }}
       </ion-row>
     </ion-grid>
   </div>
@@ -95,27 +94,15 @@
       width: 100%;">
     <ion-label style="
     width: 100%;
-    padding: 4%;">Work</ion-label>
+    padding: 10px 16px;">Work</ion-label>
       <ion-item *ngFor="let work of works" style="width: 50%;">
         <ion-label>{{ work.label }}</ion-label>
+      <ion-thumbnail slot="start">
+        <img [src]="work.imageUrl" alt="{{ work.label }} Image">
+      </ion-thumbnail>
         <ion-checkbox slot="start" [(ngModel)]="work.checked"></ion-checkbox>
       </ion-item>
     </ion-list>
-
-    <ion-item>
-      <ion-select label="Food" [(ngModel)]="pal.food">
-        <ion-select-option value="1">1</ion-select-option>
-        <ion-select-option value="2">2</ion-select-option>
-        <ion-select-option value="3">3</ion-select-option>
-        <ion-select-option value="4">4</ion-select-option>
-        <ion-select-option value="5">5</ion-select-option>
-        <ion-select-option value="6">6</ion-select-option>
-        <ion-select-option value="7">7</ion-select-option>
-        <ion-select-option value="8">8</ion-select-option>
-        <ion-select-option value="9">9</ion-select-option>
-        <ion-select-option value="10">10</ion-select-option>
-      </ion-select>
-    </ion-item>
     <p class="text-center">
       <ion-button (click)="onUpdate()">Modify</ion-button>
     </p>

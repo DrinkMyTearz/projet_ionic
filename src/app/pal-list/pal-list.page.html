@@ -9,7 +9,7 @@
   <ion-button routerLink="new">Generate a pal</ion-button>
   <h2>Pal list</h2>
   <ion-grid>
-    <ion-row *ngFor="let pal of pals">
+    <ion-row *ngFor="let pal of sortedPals">
       <ion-col size="12">
         <ion-card [routerLink]="['/pal', pal.id]">
           <ion-card-content>

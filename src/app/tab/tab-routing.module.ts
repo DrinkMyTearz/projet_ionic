@@ -16,16 +16,9 @@ const routes: Routes = [
         path:'home',
         loadChildren: () => import('../home/home.module').then(m=>m.HomePageModule)
       }, {
-        path: 'films',
-        loadChildren: () => import('../films-list/films-list.module').then(m=>m.FilmsListPageModule)
-      }, {
         path: 'about',
         loadChildren: () => import('../about/about.module').then(m=>m.AboutPageModule)
       }, {
-        path: 'photos',
-        loadChildren: () => import('../photos/photos.module').then(m=>m.PhotosPageModule)
-      },
-      {
         path: 'pal',
         loadChildren: () => import('../pal-list/pal-list.module').then( m => m.PalListPageModule)
       }

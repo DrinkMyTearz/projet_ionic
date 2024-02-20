@@ -14,18 +14,18 @@ export class PalPage implements OnInit {
   pal!: Pals;
   
   works: any[] = [
-    { label: 'Kindling', checked: false },
-    { label: 'Planting', checked: false },
-    { label: 'Handiwork', checked: false },
-    { label: 'Lumbering', checked: false },
-    { label: 'Medecine Production', checked: false },
-    { label: 'Transporting', checked: false },
-    { label: 'Watering', checked: false },
-    { label: 'Generating Electricity', checked: false },
-    { label: 'Gathering', checked: false },
-    { label: 'Mining', checked: false },
-    { label: 'Cooling', checked: false },
-    { label: 'Farming', checked: false }
+    { label: 'Kindling', checked: false, imageUrl: "../../../assets/img/works/kindling.png" },
+    { label: 'Planting', checked: false, imageUrl: "../../../assets/img/works/Planting.png" },
+    { label: 'Handiwork', checked: false, imageUrl: "../../../assets/img/works/kindling.png" },
+    { label: 'Lumbering', checked: false, imageUrl: "../../../assets/img/works/kindling.png" },
+    { label: 'Medecine Production', checked: false, imageUrl: "../../../assets/img/works/kindling.png" },
+    { label: 'Transporting', checked: false, imageUrl: "../../../assets/img/works/kindling.png" },
+    { label: 'Watering', checked: false, imageUrl: "../../../assets/img/works/kindling.png" },
+    { label: 'Generating Electricity', checked: false, imageUrl: "../../../assets/img/works/kindling.png" },
+    { label: 'Gathering', checked: false, imageUrl: "../../../assets/img/works/kindling.png" },
+    { label: 'Mining', checked: false, imageUrl: "../../../assets/img/works/kindling.png" },
+    { label: 'Cooling', checked: false, imageUrl: "../../../assets/img/works/kindling.png" },
+    { label: 'Farming', checked: false, imageUrl: "../../../assets/img/works/kindling.png" }
   ];
 
   constructor(
@@ -90,28 +90,9 @@ export class PalPage implements OnInit {
     );
   }
 
-
   onDelete(id: any) {
     this.palService.delete(id); 
     this.router.navigate(['/pals']); 
   }
 
-}
-export class CheckboxesPage {
-  works: any[] = [
-    { label: 'Kindling', checked: false },
-    { label: 'Planting', checked: false },
-    { label: 'Handiwork', checked: false },
-    { label: 'Lumbering', checked: false },
-    { label: 'Medecine Production', checked: false },
-    { label: 'Transporting', checked: false },
-    { label: 'Watering', checked: false },
-    { label: 'Generating Electricity', checked: false },
-    { label: 'Gathering', checked: false },
-    { label: 'Mining', checked: false },
-    { label: 'Cooling', checked: false },
-    { label: 'Farming', checked: false }
-  ];
-
-  constructor() {}
 }

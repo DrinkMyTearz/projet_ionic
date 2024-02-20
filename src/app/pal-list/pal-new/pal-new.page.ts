@@ -13,18 +13,18 @@ export class PalNewPage implements OnInit {
   public pal!: Pals;
 
   works: any[] = [
-    { label: 'Kindling', checked: false },
-    { label: 'Planting', checked: false },
-    { label: 'Handiwork', checked: false },
-    { label: 'Lumbering', checked: false },
-    { label: 'Medicine Production', checked: false },
-    { label: 'Transporting', checked: false },
-    { label: 'Watering', checked: false },
-    { label: 'Generating Electricity', checked: false },
-    { label: 'Gathering', checked: false },
-    { label: 'Mining', checked: false },
-    { label: 'Cooling', checked: false },
-    { label: 'Farming', checked: false }
+    { label: 'Kindling', checked: false, imageUrl: "../../../assets/img/works/kindling.png" },
+    { label: 'Planting', checked: false, imageUrl: "../../../assets/img/works/planting.png" },
+    { label: 'Handiwork', checked: false, imageUrl: "../../../assets/img/works/handiwork.png" },
+    { label: 'Lumbering', checked: false, imageUrl: "../../../assets/img/works/lumbering.png" },
+    { label: 'Medicine Production', checked: false, imageUrl: "../../../assets/img/works/medicine_production.png" },
+    { label: 'Transporting', checked: false, imageUrl: "../../../assets/img/works/transporting.png" },
+    { label: 'Watering', checked: false, imageUrl: "../../../assets/img/works/watering.png" },
+    { label: 'Generating Electricity', checked: false, imageUrl: "../../../assets/img/works/generating_electricity.png" },
+    { label: 'Gathering', checked: false, imageUrl: "../../../assets/img/works/gathering.png" },
+    { label: 'Mining', checked: false, imageUrl: "../../../assets/img/works/mining.png" },
+    { label: 'Cooling', checked: false, imageUrl: "../../../assets/img/works/cooling.png" },
+    { label: 'Farming', checked: false, imageUrl: "../../../assets/img/works/farming.png" }
   ];
 
   constructor(
