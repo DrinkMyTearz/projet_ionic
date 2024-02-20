@@ -12,6 +12,24 @@ import { PalService } from 'src/app/services/pal.service';
 export class PalNewPage implements OnInit {
   public pal!: Pals;
 
+  types: any[] = [
+    { label: 'Neutral', imageUrl: '../../../assets/img/types/neutral.png' },
+    { label: 'Dark', imageUrl: '../../../assets/img/types/dark.png' },
+    { label: 'Dragon', imageUrl: '../../../assets/img/types/dragon.png' },
+    { label: 'Ice', imageUrl: '../../../assets/img/types/ice.png' },
+    { label: 'Fire', imageUrl: '../../../assets/img/types/fire.png' },
+    { label: 'Grass', imageUrl: '../../../assets/img/types/grass.png' },
+    { label: 'Ground', imageUrl: '../../../assets/img/types/ground.png' },
+    { label: 'Electric', imageUrl: '../../../assets/img/types/electric.png' },
+    { label: 'Water', imageUrl: '../../../assets/img/types/water.png' }
+  ];
+
+  
+  types2: any[] = [
+    { label: 'None' },
+    ...this.types
+  ];
+
   works: any[] = [
     { label: 'Kindling', checked: false, imageUrl: "../../../assets/img/works/kindling.png" },
     { label: 'Planting', checked: false, imageUrl: "../../../assets/img/works/planting.png" },
@@ -44,7 +62,7 @@ export class PalNewPage implements OnInit {
     });
     (await toast).present().then(() => {
       setTimeout(() => {
-        this.router.navigate(['/pals']);
+        this.router.navigate(['/pal']);
       }, 2000);
     });
   }
@@ -66,8 +84,7 @@ export class PalNewPage implements OnInit {
       pal.number !== 0 &&
       pal.description !== '' &&
       pal.type1 !== '' &&
-      pal.type2 !== '' &&
-      pal.food !== ''
+      pal.type2 !== ''
     );
   }
 

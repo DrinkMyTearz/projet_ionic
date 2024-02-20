@@ -20,32 +20,24 @@
     </ion-item>
     <ion-item>
       <ion-select label="Type 1" [(ngModel)]="pal.type1">
-        <ion-select-option value="Neutral">Neutral</ion-select-option>
-        <ion-select-option value="Dark">Dark</ion-select-option>
-        <ion-select-option value="Dragon">Dragon</ion-select-option>
-        <ion-select-option value="Ice">Ice</ion-select-option>
-        <ion-select-option value="Fire">Fire</ion-select-option>
-        <ion-select-option value="Grass">Grass</ion-select-option>
-        <ion-select-option value="Ground">Ground</ion-select-option>
-        <ion-select-option value="Electric">Electric</ion-select-option>
-        <ion-select-option value="Water">Water</ion-select-option>
+        <ion-select-option *ngFor="let type of types" [value]="type.label">
+          <ion-thumbnail slot="start">
+            <img [src]="type.imageUrl" alt="{{ type.label }} Image">
+          </ion-thumbnail>
+          {{ type.label }}
+        </ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-select label="Type 2" [(ngModel)]="pal.type2">
-        <ion-select-option value="Neutral">Neutral</ion-select-option>
-        <ion-select-option value="Dark">Dark</ion-select-option>
-        <ion-select-option value="Dragon">Dragon</ion-select-option>
-        <ion-select-option value="Ice">Ice</ion-select-option>
-        <ion-select-option value="Fire">Fire</ion-select-option>
-        <ion-select-option value="Grass">Grass</ion-select-option>
-        <ion-select-option value="Ground">Ground</ion-select-option>
-        <ion-select-option value="Electric">Electric</ion-select-option>
-        <ion-select-option value="Water">Water</ion-select-option>
-        <ion-select-option value="None">None</ion-select-option>
+        <ion-select-option *ngFor="let type of types2" [value]="type.label">
+          <ion-thumbnail slot="start">
+            <img [src]="type.imageUrl" alt="{{ type.label }} Image">
+          </ion-thumbnail>
+          {{ type.label }}
+        </ion-select-option>
       </ion-select>
     </ion-item>
-    
     <ion-list style="
       display: flex;
       flex-direction: row;

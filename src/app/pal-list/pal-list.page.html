@@ -8,19 +8,26 @@
   <h2>Generation of a new pal</h2>
   <ion-button routerLink="new">Generate a pal</ion-button>
   <h2>Pal list</h2>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="filterPals($event)"></ion-searchbar>
   <ion-grid>
-    <ion-row *ngFor="let pal of sortedPals">
+    <ion-row *ngFor="let pal of filteredPals">
       <ion-col size="12">
         <ion-card [routerLink]="['/pal', pal.id]">
           <ion-card-content>
             <ion-item>
-              <ion-avatar slot="start">
-                <img [src]="pal.pictureLink" [alt]="pal.name">
-              </ion-avatar>
-              <ion-label>
-                <h2 class="pal-number">{{ pal.number }}</h2>
-                <p class="pal-name">{{ pal.name }}</p>
-              </ion-label>
+                <ion-avatar slot="start">
+                  <img [src]="pal.pictureLink" [alt]="pal.name">
+                </ion-avatar>
+                <ion-label>
+                  <h2 class="pal-number">N° {{ pal.number }}</h2>
+                  <p class="pal-name">{{ pal.name }}</p>
+                </ion-label>
+              <ion-col>
+                <img [src]="getTypeImageUrl(pal.type1)" alt="{{ pal.type1 }}">
+              </ion-col>
+              <ion-col>
+                <img [src]="getTypeImageUrl(pal.type2)" alt="{{ pal.type2 }}">
+              </ion-col>
             </ion-item>
           </ion-card-content>
         </ion-card>

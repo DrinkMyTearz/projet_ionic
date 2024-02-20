@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-button (click)="setUpdate()">Update</ion-button>
-  <ion-button (click)="onDelete(pal.id)"><ion-icon name="person-remove"></ion-icon>Supprimer</ion-button>
+  <ion-button (click)="setDelete(pal.id)">Delete</ion-button>
 
   <div *ngIf="!modif">
     <ion-grid *ngIf="pal">
@@ -32,14 +32,15 @@
           <p>{{ pal.description }}</p>
         </ion-col>
       </ion-row>
-      <ion-row>
-        <strong>Type :</strong> {{ pal.type1 }} / {{ pal.type2 }}
+      <ion-row style="height: 50px; display: flex; align-items: center;">
+        <strong>Type :</strong>
+        <img [src]="getTypeImageUrl(pal.type1)" alt="{{ pal.type1 }}"> {{ pal.type1 }} / <img [src]="getTypeImageUrl(pal.type2)" alt="{{ pal.type2 }}">{{ pal.type2 }}
       </ion-row>
       <ion-row>
-        <strong>Work :</strong> {{ pal.work[1] }}
-      </ion-row>
-      <ion-row>
-        <strong>Food :</strong> {{ pal.food }}
+        <strong>Work :</strong>
+        <ion-col *ngFor="let work of pal.work">
+          {{ work }}
+        </ion-col>
       </ion-row>
     </ion-grid>
   </div>
@@ -59,29 +60,22 @@
     </ion-item>
     <ion-item>
       <ion-select label="Type 1" [(ngModel)]="pal.type1">
-        <ion-select-option value="Neutral">Neutral</ion-select-option>
-        <ion-select-option value="Dark">Dark</ion-select-option>
-        <ion-select-option value="Dragon">Dragon</ion-select-option>
-        <ion-select-option value="Ice">Ice</ion-select-option>
-        <ion-select-option value="Fire">Fire</ion-select-option>
-        <ion-select-option value="Grass">Grass</ion-select-option>
-        <ion-select-option value="Ground">Ground</ion-select-option>
-        <ion-select-option value="Electric">Electric</ion-select-option>
-        <ion-select-option value="Water">Water</ion-select-option>
+        <ion-select-option *ngFor="let type of types" [value]="type.label">
+          <ion-thumbnail slot="start">
+            <img [src]="type.imageUrl" alt="{{ type.label }} Image">
+          </ion-thumbnail>
+          {{ type.label }}
+        </ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-select label="Type 2" [(ngModel)]="pal.type2">
-        <ion-select-option value="Neutral">Neutral</ion-select-option>
-        <ion-select-option value="Dark">Dark</ion-select-option>
-        <ion-select-option value="Dragon">Dragon</ion-select-option>
-        <ion-select-option value="Ice">Ice</ion-select-option>
-        <ion-select-option value="Fire">Fire</ion-select-option>
-        <ion-select-option value="Grass">Grass</ion-select-option>
-        <ion-select-option value="Ground">Ground</ion-select-option>
-        <ion-select-option value="Electric">Electric</ion-select-option>
-        <ion-select-option value="Water">Water</ion-select-option>
-        <ion-select-option value="None">None</ion-select-option>
+        <ion-select-option *ngFor="let type of types2" [value]="type.label">
+          <ion-thumbnail slot="start">
+            <img [src]="type.imageUrl" alt="{{ type.label }} Image">
+          </ion-thumbnail>
+          {{ type.label }}
+        </ion-select-option>
       </ion-select>
     </ion-item>
     
